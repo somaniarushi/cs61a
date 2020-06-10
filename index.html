@@ -4,6 +4,7 @@ CS61A Discussion Reference
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./github-markdown.css">
+<script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
 <style>
     .markdown-body {
         box-sizing: border-box;
@@ -20,18 +21,25 @@ CS61A Discussion Reference
     }
 
 </style>
-</head><body data-gr-c-s-loaded="true">
-    
+
+<input type="checkbox" id="toggle-mode-cb" />
+
+<div id="mode-wrapper">
+
+    <label id="toggle-mode" for="toggle-mode-cb">
+        <span class="sr-only"></span>
+        <span class="toggle-border">
+          <span class="toggle-indicator"></span>
+        </span>
+    </label>
+
 <article class="markdown-body">
 <h1>
-    CS61A: Supplementary Materials For Discussion 
+    CS61A: UC Berkeley, Summer 2020 
 </h1>
-<h3>UC Berkeley, Summer 2020</h3>
 
-Please direct all questions to <code>arushisomani@berkeley.edu</code>.
-
-<p><br></p>
-<p><a name="schedule"></a></p><a name="schedule">
+<p>Please direct all questions to <code>arushisomani@berkeley.edu</code>.</p>
+<br>
 <h2 id="content-and-schedule">Schedule And Content</h2>
 
 <ul>
@@ -39,103 +47,120 @@ Please direct all questions to <code>arushisomani@berkeley.edu</code>.
 </ul>
 <table style="width:100%;">
 <colgroup>
+    <col style="width: 5%">
     <col style="width: 10%">
-    <col style="width: 30%">
+    <col style="width: 20%">
     <col style="width: 30%">
     <col style="width: 30%">
 </colgroup>
 <thead>
     <tr class="header">
         <th>
-Week
+            Week
         </th>
         <th>
-Topic & Theory
+            Date
         </th>
         <th>
-        Discussion
+            Topic & Theory
         </th>
         <th>
-        Lab
+            Discussion
+        </th>
+        <th>
+            Lab
         </th>
     </tr>
 </thead>
 
 <tbody>
-    <tr class="odd">
+    <tr>
         <td>
             1
         </td>
         <td>
-            <a href="https://www.notion.so/arushisomani/Abstract-0-eabfc2ef197f4b79bd116bb29c5545b5">
+            6/22
+        </td>
+        <td>
                 Intro
-            </a> 
+        </td>
+        <td>
+        </td>
+        <td>
+            Lab 00 <br><a href="#">Link</a> <a href="#">Slides</a> <a href="#">Video</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            6/22
+        </td>
+        <td>
+            Intro
             <br>
         </td>
         <td>
-        </td>
-        <td>
-            Lab 00 
-            <!-- <a href=""> (Slides) </a>
-            <a href="">(Video)</a>
-            <a href="">(Question Reference) </a> <br> -->
-        </td>
-    </tr>
-    <tr class="even">
-        <td>
-        </td>
-        <td>
-            <a href="">Functions</a>
-        </td>
-        <td>
-            Discussion 00
-            <!-- Discussion 0 
-            <a href="">(Slides) </a>
-            <a href="">(Video)</a>
-            <a href="">(Question Reference) </a> <br> -->
+            Discussion 00 <br>(Link) (Slides) (Video)
         </td>
         <td>
         </td>
         </tr>
-        <tr class="odd">
+    <tr>
             <td>
             </td>
             <td>
-                <a href="">Control</a> <br>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
             <td>
             </td>
         </tr>
-        <tr class="even">
+        <tr>
             <td>
             </td>
             <td>
-                <a href="">Environment Diagrams</a>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
             <td>
             </td>
         </tr>
-        <tr class="odd">
+        <tr>
             <td>
                 2
             </td>
             <td>
-                <a href="">Higher Order Functions</a> <br>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
             <td>
             </td>
         </tr>
-        <tr class="even">
+        <tr>
             <td>
             </td>
             <td>
-                <a href="">Recursion</a>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
@@ -143,22 +168,30 @@ Topic & Theory
             </td>
         </tr>
 
-        <tr class="odd">
+        <tr>
             <td>
             </td>
             <td>
-                <a href="">Recursion Examples</a> <br>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
             <td>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td>
             </td>
             <td>
-                <a href="">Sequences & Data Abstraction</a>
+                6/22
+            </td>
+            <td>
+                Intro
+                <br>
             </td>
             <td>
             </td>
@@ -167,9 +200,8 @@ Topic & Theory
         </tr>
 </tbody>
 </table>
-I'll try to keep this as updated as possible!
+<p>I'll try to keep this as updated as possible!</p>
 
-<p><br></p>
 <h2>Challenge Quizzes</h2>
 <ul>
     <li>Every second week, I will post an optional challenge quiz, using questions from previous examinations. It's good practise!</li>
@@ -180,10 +212,12 @@ I'll try to keep this as updated as possible!
 <ol>
     <li> <b>What can I ask you for help with?</b><br>Everything under the sun regarding 61A, except of course any solutions themselves.</li>
     <br> 
-    <li> <b>How do I ask for an extension on an assignment?</b><br>Email <code>cs61+su20@berkeley.edu.</code></li>
+    <li> <b>How do I ask for an extension on an assignment?</b><br>Email <code>cs61a+su20@berkeley.edu</code>.</li>
 </ol>
 <p><br></p>
 <footer>&copy; AMKS</footer>
 </article>
+</div>
+</body>
 
-</body></html>
+</html>
