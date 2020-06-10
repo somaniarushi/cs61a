@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+CS61A: Supplementary Materials For Discussion
+=============================================
 
-You can use the [editor on GitHub](https://github.com/somaniarushi/chiron/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### UC Berkeley, Summer 2020
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Please direct all questions to `arushisomani@berkeley.edu`.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+Schedule And Content
+--------------------
+-   [Question Rating System Explained]()
 
-# Header 1
-## Header 2
-### Header 3
+| Week  | Topic & Theory  |  Discussion        |  Lab           |
+|---    |---              |---                 |---             |
+| 1     |[Intro]()        |                    |Lab 00          |
+|       |[Functions]()    |                    |                |
+|       |[Control]()      |                    |                |
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+I'll try to keep this as updated as possible!
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Challenge Quizzes
+-----------------
+Every second week, I will post an optional challenge quiz, using questions from previous examinations. It's good practise!
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/somaniarushi/chiron/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+Frequently Asked Questions
+--------------------------
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+1.  **What can I ask you for help with?**
+    Everything under the sun regarding 61A, except of course any
+    solutions themselves.
+2.  **How do I ask for an extension on an assignment?**
+    Email `cs61+su20@berkeley.edu.`
+
+
+
+© AMKS
