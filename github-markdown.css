@@ -791,7 +791,7 @@
 } 
 
 #toggle-mode-cb:checked + #mode-wrapper a {
-  color: #e837ff;
+  color: #e454f7;
   text-decoration: none;
 }
 
