@@ -829,3 +829,8 @@
 #toggle-mode-cb:checked + #mode-wrapper code {
   background-color: #784e85b2;
 } 
+
+#toggle-mode-cb:checked + #mode-wrapper pre {
+  background-color: #0000004b;
+  color: #f0f0f0e5;
+} 

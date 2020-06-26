@@ -1,0 +1,196 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+    CS61A | How Control Flows
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../github-markdown.css">
+    <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+        .markdown-body .checked {
+            color: orange;
+        }
+        #toggle-mode-cb:checked + #mode-wrapper h1 {
+            color: #7f5df8d8;
+        } 
+        .markdown-body li {
+            padding: 5px 0;
+            padding-left: 20px;
+        }
+
+        
+    
+    </style>
+    <script src="../../toggle-save.js"></script>
+    
+    <input type="checkbox" id="toggle-mode-cb" />
+    
+    <div id="mode-wrapper">
+    
+        <label id="toggle-mode" for="toggle-mode-cb">
+            <span class="sr-only"></span>
+            <span class="toggle-border">
+              <span class="toggle-indicator"></span>
+            </span>
+        </label>
+    
+    <article class="markdown-body">
+        <p><a href="../"> <span class="fa fa-arrow-left"></span> home</a></p>
+        <h1> How Does Control Flow?</h1>
+        <p> To understand everything that 61A is trying to teach you, its 
+            important to understand the fundamental idea that everything is based 
+            on –– <b>how are Python programs executed?</b>
+        </p>
+        <h2>
+            Direct Control Flow
+        </h2>
+        <p> In the simplest of functions, control simply flows downward.</p>        
+<pre>
+a = 3
+print(a) # prints 3
+</pre>
+        <p>   The reason this works is because the control goes up to down –– 
+            3 is bound to a, and then looked up in line 2.
+            This is quite like English, so we do it intuitively.
+        </p>
+        <h2>Breaking Control Flow With If</h2>
+        <p>
+            The first way you learn how to break control is through if. 
+            If is known as the "conditional", because one of many statements
+            is conditionally executed. </p>
+<pre>
+if (3 > 4):
+    print("suite 1") # this does not get executed
+else:
+    print("suite 2") # this gets executed
+</pre>
+        <p>
+            <a href="http://www.pythontutor.com/visualize.html#code=if%20%283%20%3E%204%29%3A%0A%20%20%20%20print%28%22suite%201%22%29%20%23%20this%20does%20not%20get%20executed%0Aelse%3A%0A%20%20%20%20print%28%22suite%202%22%29%20%23%20this%20gets%20executed&cumulative=false&heapPrimitives=nevernest&mode=edit&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Try it out yourself in PythonTutor.</a>
+        </p>
+        <p>
+            As you can see, the control arrow <i>jumps</i> from line 1 to line 3, skipping line 2 entirely.
+            You could add anything to that line, and it won't error –– because
+            it will never execute.
+        </p>
+<pre>
+if (3 > 4):
+    print(1/0) # should throw error but never executed
+else:
+    print("suite 2") # this gets executed
+</pre>
+
+        <h2>Breaking Flow Of Control With Functions</h2>
+        <p>
+            Another, more complicated way, the control flow is broken is through functions.
+            Take this simple example.
+        </p>
+<pre>
+def f(x):
+    print("Inside the function") # doesn't get executed
+    return 1/0 # does not error
+
+print("Outside the function") # gets executed
+</pre>
+        <p>
+            <a href="http://pythontutor.com/visualize.html#code=def%20f%28x%29%3A%0A%20%20%20%20print%28%22Inside%20the%20function%22%29%20%23%20doesn't%20get%20executed%0A%20%20%20%20return%20x%2B1%0A%0Aprint%28%22Outside%20the%20function%22%29%20%23%20gets%20executed&cumulative=false&curInstr=2&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Try it out yourself in Python Tutor</a>
+        </p>
+        <p>
+            So the function signature (that's the <code>def</code> line) is read, but not the function itself. The error inside the function doesn't execute,
+            nor is the print statement. While the function's name and number
+            of arguments are read and saved, the body of the function is
+            not.  
+        </p>
+        <p>
+            Now let's think about what happens when you call the function.
+        </p>
+<pre>
+def f(x):
+    print(a) # is executed
+    return x+1
+
+a = 3
+print(f(a)) # prints 4
+print(a) # prints 3
+</pre>
+        <p>
+            First, we bind a function with one argument to f. Then, we bind a to 3. 
+            Then, we call f with a (which is 3).
+        </p>
+        <p>
+            This call takes you out of your "main" control flow, and
+            creates a separate flow. You've previously thought about this in
+            terms of a <i>new frame.</i>
+        </p>
+        <p>
+            In this frame, everything inside of the frame is accessible,
+            and everything in all its parent frames is also accessible.
+            Moreover, anything that gets passed into this frame is a new
+            copy –– the x inside of the function is not the same as the a 
+            that is passed in (This idea will grow in importance as the things
+            we pass in get more and more complicated).
+        </p>
+<pre>
+def f(x):
+    x = x+1
+    print(a) # prints 3
+    return x
+
+a = 3
+print(f(a)) # prints 4
+print(a) # prints 3
+</pre>
+        <p>
+            As seen, the value a is accessible despite not being in the function's 
+            flow, because it is in the parent flow. Of course, x itself is accessible.
+            Changing x does not change a, because x is an independent copy of a.
+        </p>
+        <p>
+            The return value ends the function's frame and leads you back into
+            the main flow ("global frame"). Even functions that don't explicitly
+            have a return value have an implicit <code>return None</code> statement.
+        </p>
+        <p>
+            When the function returns to its own frame, it brings a value with it, and 
+            normal control flow resumes.
+        </p>
+        <h2>Frames Are Independent Of Each Other</h2>
+        <p>
+            Consider the following example:
+        </p>
+<pre>
+def f(x):
+    a = a+1
+    return x
+
+a = 3
+print(f(a)) # Print 1
+print(a) # Print 2
+</pre>        
+        <p>
+            What do you think will be printed? <a href="">Take a moment to try it out in PythonTutor.</a>
+        </p>
+        <br>
+        <p align="right">Questions? Email <code>arushisomani@berkeley.edu</code></p>
+    </article>
+    <br><br>
+    <br><br>
+    <br><br>
+
+    </div>
+    
+    </body>
+    
+    </html>
