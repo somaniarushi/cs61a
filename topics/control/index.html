@@ -48,7 +48,7 @@
         </label>
     
     <article class="markdown-body">
-        <p><a href="../"> <span class="fa fa-arrow-left"></span> home</a></p>
+        <p><a href="../../"> <span class="fa fa-arrow-left"></span> home</a></p>
         <h1> How Does Control Flow?</h1>
         <p> To understand everything that 61A is trying to teach you, its 
             important to understand the fundamental idea that everything is based 
@@ -91,6 +91,29 @@ if (3 > 4):
 else:
     print("suite 2") # this gets executed
 </pre>
+        <h2>Breaking Control Flow With While</h2>
+        <p>
+            Another way we could change the flow of control is to make
+            it go over the same block of code over and over again.
+        </p>
+<pre>
+n = 1
+while (n < 4):
+    print("Hello") # prints thrice
+    n = n + 1
+</pre>
+        <p>
+            The fundamental idea behind the loop is to do the same thing over
+            and over again with small changes each time. </p> <p>
+            There are four parts to the loop –– 
+
+            the initial assignment (n = 1), 
+            the iterative condition (while n < 4), 
+            the execution (printing Hello) 
+            and the updation (n = n + 1). 
+            When we combine all four of these,
+            we get a block of code that operates iteratively.
+        </p>
 
         <h2>Breaking Flow Of Control With Functions</h2>
         <p>
@@ -172,7 +195,7 @@ print(a) # prints 3
         </p>
 <pre>
 def f(x):
-    a = a+1
+    a = 4
     return x
 
 a = 3
@@ -181,6 +204,22 @@ print(a) # Print 2
 </pre>        
         <p>
             What do you think will be printed? <a href="">Take a moment to try it out in PythonTutor.</a>
+        </p>
+        <p>
+            You'll notice that Print 2 will return 3! So what happened to the a=4 that we defined.
+            This is the idea of framing. The universe that f(x) operates in is different (but not completely divorced)
+            from the universe of the main program (the global universe, if I may). The a that is defined in
+            the function is completely different from the a that is defined before the
+            function call. That's right –– there are two different a s existing!
+        </p>
+        <p>
+            This is what I mean by "the independence of frames". That is to say, a different 
+            frame has its own defined variables that may have the same name as a parent frame.
+        </p>
+        <p>
+            You may feel like this idea is starting to get familiar –– and it rightly should–– it's the
+            idea behind environment diagrams! I think understanding this concept makes environment diagrams 
+            a lot more simple. Check out the quick note on those to understand how to use these concepts! [Coming soon].
         </p>
         <br>
         <p align="right">Questions? Email <code>arushisomani@berkeley.edu</code></p>
